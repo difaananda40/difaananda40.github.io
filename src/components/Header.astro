@@ -1,0 +1,26 @@
+---
+ const path: string = Astro.url.pathname;
+ const currentPath: string = 'text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-600';
+---
+
+<header class="w-3/4 mx-auto py-10 flex flex-row justify-between">
+  <div>
+    <p class="text-xl font-bold">
+      <span class="text-blue-500 mr-1">by</span>  
+      difaananda.
+    </p>
+  </div>
+  <div>
+    <ul class="flex flex-row space-x-8 text-lg">
+      <li class={path === '/' ? currentPath : ''}>
+        <a href="/">Home</a>
+      </li>
+      <li class={path === '/blog' ? currentPath : ''}>
+        <a href="/blog">Blog</a>
+      </li>
+      <li class={path === '/contact' ? currentPath : ''}>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</header>
