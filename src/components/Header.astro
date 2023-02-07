@@ -1,12 +1,14 @@
 ---
  const path: string = Astro.url.pathname;
- const currentPath: string = 'text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-blue-600';
+ const currentPath: string = `text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br
+                              from-red-400 to-red-600
+                              dark:from-blue-400 dark:to-blue-600`;
 ---
 
 <header class="w-3/4 mx-auto py-10 flex flex-row justify-between">
   <div>
     <p class="text-xl font-bold">
-      <span class="text-blue-500 mr-1">by</span>  
+      <span class="text-red-500 dark:text-blue-500 mr-1">by</span>  
       difaananda.
     </p>
   </div>
@@ -21,6 +23,35 @@
       <li class={path === '/contact' ? currentPath : ''}>
         <a href="/contact">Contact</a>
       </li>
+      <li class="flex items-center">
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input id="theme-switcher" type="checkbox" value="" class="sr-only peer">
+          <div class="w-11 h-6 bg-yellow-300 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+        </label>
+      </li>
     </ul>
   </div>
 </header>
+
+<script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark')
+    const themeSwitcher = document.getElementById('theme-switcher') as HTMLInputElement;
+    themeSwitcher.checked = true;
+  }
+
+  function toggleTheme() {
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+      console.log('dark mode');
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+      console.log('light mode');
+    }
+  }
+
+  const themeSwitcher = document.getElementById('theme-switcher')!;
+  themeSwitcher.addEventListener('click', toggleTheme);
+</script>
