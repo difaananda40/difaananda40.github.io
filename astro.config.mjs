@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: import.meta.env.SITE || '',
-  base: import.meta.env.BASE_URL || '',
+  ...(import.meta.env.SITE && { site: import.meta.env.SITE }),
+  ...(import.meta.env.BASE_URL && { base: import.meta.env.BASE_URL }),
 });
