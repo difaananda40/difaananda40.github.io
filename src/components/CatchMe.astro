@@ -1,0 +1,52 @@
+<style>
+  .vespa-motion {
+    animation-name: vespa-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.17,.67,.85,.55);
+  }
+
+  @keyframes vespa-animation {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(180%);
+      opacity: 0;
+    }
+  }
+</style>
+
+<div id="catch-me" class="flex flex-row justify-between">
+  <div class="py-32 space-y-8 flex flex-col">
+    <h2 class="text-black text-6xl font-bold dark:text-white">Get in touch.</h2>
+    <p class="text-xl text-black dark:text-gray-300">I'd like to explore anytime anywhere, but when you have some project, maybe that'll be my next destination.</p>
+    <div class="flex flex-col space-y-2">
+      <div class="flex flex-row space-x-4 items-center">
+        <img src="icons/whatsapp.svg" alt="wa icon" class="w-6">
+        <p class="text-lg">+62 831 5394 1808</p>
+      </div>
+      <div class="flex flex-row space-x-4 items-center">
+        <img src="icons/mail.svg" alt="mail icon" class="w-6">
+        <p class="text-lg">difacool40@gmail.com</p>
+      </div>
+    </div>
+    <a href="mailto:difacool40@gmail.com" class="w-fit px-8 py-4 bg-yellow-300 dark:bg-[#19122e] text-lg font-medium hover:brightness-105 dark:hover:brightness-110">Catch me</a>
+  </div>
+  <div class="relative w-fit h-fit">
+    <lottie-player class="" src="lotties/windy-environment.json"  background="transparent"  speed="1"  style="width: 800px; height: 800px;"  loop  autoplay></lottie-player>
+    <lottie-player class="absolute bottom-10 vespa-motion" src="lotties/happy-delivery.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+  </div>
+</div>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
