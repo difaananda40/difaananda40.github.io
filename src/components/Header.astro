@@ -29,10 +29,18 @@
 </header>
 
 <script>
+  // Bulb
+  const bulbOff = document.getElementById('bulb-off') as HTMLImageElement;
+  const bulbOn = document.getElementById('bulb-on') as HTMLImageElement;
+  const themeSwitcher = document.getElementById('theme-switcher') as HTMLInputElement;
+
   if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.classList.add('dark')
-    const themeSwitcher = document.getElementById('theme-switcher') as HTMLInputElement;
     themeSwitcher.checked = true;
+    bulbOn.style.display = 'block';
+  }
+  else {
+    bulbOff.style.display = 'block';
   }
 
   function toggleTheme() {
@@ -41,14 +49,15 @@
     ) {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'dark')
-      console.log('dark mode');
+      bulbOff.style.display = 'none';
+      bulbOn.style.display = 'block';
     } else {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light')
-      console.log('light mode');
+      bulbOff.style.display = 'block';
+      bulbOn.style.display = 'none';
     }
   }
 
-  const themeSwitcher = document.getElementById('theme-switcher')!;
   themeSwitcher.addEventListener('click', toggleTheme);
 </script>

@@ -25,6 +25,9 @@ const { title } = Astro.props;
 	<body class="bg-lime-50 text-black
 							 dark:bg-[#03001C] dark:text-white
 	">
+	  <!-- Bulb -->
+		<object id="bulb-off" data="images/bulb-off.svg" type="image/svg+xml" class="absolute w-64 h-64" style="display: none;"></object>
+		<object id="bulb-on" data="images/bulb-on.svg" type="image/svg+xml" class="absolute w-64 h-64" style="display: none;"></object>
 		<Header />
 		<main class="w-full md:w-3/4 mx-auto">
 			<div class="p-10 rounded-lg">
@@ -55,24 +58,5 @@ const { title } = Astro.props;
 	}
 	
 </style>
-<style>
-	.gradimotion {
-		animation: animat 8s linear infinite;
-		--bg-size: 400%;
-		--color-one: theme(colors.blue.600);
-		--color-two: theme(colors.pink.600);
-		background: linear-gradient(
-                90deg,
-                var(--color-one),
-                var(--color-two),
-                var(--color-one)
-              ) 0 0 / var(--bg-size) 100%;
-		@apply p-1;
-	}
-
-	@keyframes animat {
-		to {
-			background-position: var(--bg-size) 0%;
-		}
-	}
-</style>
+<style></style>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
