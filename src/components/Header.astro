@@ -37,10 +37,10 @@
   if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.classList.add('dark')
     themeSwitcher.checked = true;
-    bulbOn.style.display = 'block';
+    bulbOn.style.opacity = '1';
   }
   else {
-    bulbOff.style.display = 'block';
+    bulbOff.style.opacity = '1';
   }
 
   function toggleTheme() {
@@ -49,13 +49,13 @@
     ) {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'dark')
-      bulbOff.style.display = 'none';
-      bulbOn.style.display = 'block';
+      bulbOff.style.opacity = '0';
+      bulbOn.style.opacity = '1';
     } else {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light')
-      bulbOff.style.display = 'block';
-      bulbOn.style.display = 'none';
+      bulbOff.style.opacity = '1';
+      bulbOn.style.opacity = '0';
     }
   }
 
