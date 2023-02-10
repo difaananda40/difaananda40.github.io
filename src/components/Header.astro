@@ -5,29 +5,27 @@
                               dark:from-blue-400 dark:to-blue-600`;
 ---
 
-<header class="w-3/4 mx-auto py-10 flex flex-row justify-between">
-  <div>
-    <p class="text-xl font-bold">
-      <span class="text-red-500 dark:text-blue-500 mr-1">by</span>  
-      difaananda.
-    </p>
-  </div>
-  <div>
-    <ul class="flex flex-row space-x-8 text-lg">
-      <li class={path === '/' ? currentPath : ''}>
-        <a href="/">Home</a>
-      </li>
-      <li class={path === '/contact' ? currentPath : ''}>
-        <a href="#catch-me">Contact</a>
-      </li>
-      <li class="flex items-center">
-        <label class="relative inline-flex items-center cursor-pointer">
-          <input id="theme-switcher" type="checkbox" value="" class="sr-only peer">
-          <div class="w-11 h-6 bg-yellow-300 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-        </label>
-      </li>
-    </ul>
-  </div>
+<header class="mx-auto flex flex-col p-8 space-y-4 items-center
+               md:w-3/4 md:flex-row md:py-10 md:space-y-0 md:justify-between"
+>
+  <p class="text-xl font-bold">
+    <span class="text-red-500 dark:text-blue-500 mr-1">by</span>  
+    difaananda.
+  </p>
+  <ul class="flex flex-row space-x-8 text-lg">
+    <li class={path === '/' ? currentPath : ''}>
+      <a href="/">Home</a>
+    </li>
+    <li class={path === '/contact' ? currentPath : ''}>
+      <a href="#catch-me">Contact</a>
+    </li>
+    <li class="flex items-center">
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input id="theme-switcher" type="checkbox" value="" class="sr-only peer">
+        <div class="w-11 h-6 bg-yellow-300 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+      </label>
+    </li>
+  </ul>
 </header>
 
 <script>
