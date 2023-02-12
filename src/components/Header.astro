@@ -29,35 +29,41 @@
 </header>
 
 <script>
-  // Bulb
-  const bulbOff = document.getElementById('bulb-off') as HTMLImageElement;
-  const bulbOn = document.getElementById('bulb-on') as HTMLImageElement;
-  const themeSwitcher = document.getElementById('theme-switcher') as HTMLInputElement;
+  window.onload = function() {
+    // Bulb
+    const bulbOff = document.getElementById('bulb-off') as HTMLObjectElement;
+    const bulbOn = document.getElementById('bulb-on') as HTMLObjectElement;
+    const themeSwitcher = document.getElementById('theme-switcher') as HTMLInputElement;
+    const bulbToggler = document.getElementById('bulb-toggler') as HTMLElement;
 
-  if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.classList.add('dark')
-    themeSwitcher.checked = true;
-    bulbOn.style.opacity = '1';
-  }
-  else {
-    bulbOff.style.opacity = '1';
-  }
-
-  function toggleTheme() {
-    if (localStorage.getItem('theme') === 'light' ||
-        !localStorage.getItem('theme')
-    ) {
+    if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-      bulbOff.style.opacity = '0';
+      themeSwitcher.checked = true;
       bulbOn.style.opacity = '1';
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-      bulbOff.style.opacity = '1';
-      bulbOn.style.opacity = '0';
     }
-  }
+    else {
+      bulbOff.style.opacity = '1';
+    }
 
-  themeSwitcher.addEventListener('click', toggleTheme);
+    function toggleTheme() {
+      if (localStorage.getItem('theme') === 'light' ||
+          !localStorage.getItem('theme')
+      ) {
+        document.documentElement.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
+        bulbOff.style.opacity = '0';
+        bulbOn.style.opacity = '1';
+        themeSwitcher.checked = true;
+      } else {
+        document.documentElement.classList.remove('dark')
+        localStorage.setItem('theme', 'light')
+        bulbOff.style.opacity = '1';
+        bulbOn.style.opacity = '0';
+        themeSwitcher.checked = false;
+      }
+    }
+
+    themeSwitcher.addEventListener('click', toggleTheme);
+    bulbToggler.addEventListener('click', toggleTheme);
+  }
 </script>
