@@ -35,14 +35,17 @@
     const bulbOn = document.getElementById('bulb-on') as HTMLObjectElement;
     const themeSwitcher = document.getElementById('theme-switcher') as HTMLInputElement;
     const bulbToggler = document.getElementById('bulb-toggler') as HTMLElement;
+    const bulbTogglerText = document.getElementById('bulb-toggler-text') as HTMLElement;
 
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark')
       themeSwitcher.checked = true;
       bulbOn.style.opacity = '1';
+      bulbTogglerText.innerHTML = 'turn on';
     }
     else {
       bulbOff.style.opacity = '1';
+      bulbTogglerText.innerHTML = 'turn off';
     }
 
     function toggleTheme() {
@@ -54,12 +57,14 @@
         bulbOff.style.opacity = '0';
         bulbOn.style.opacity = '1';
         themeSwitcher.checked = true;
+        bulbTogglerText.innerHTML = 'turn on';
       } else {
         document.documentElement.classList.remove('dark')
         localStorage.setItem('theme', 'light')
         bulbOff.style.opacity = '1';
         bulbOn.style.opacity = '0';
         themeSwitcher.checked = false;
+        bulbTogglerText.innerHTML = 'turn off';
       }
     }
 
