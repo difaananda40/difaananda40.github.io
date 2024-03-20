@@ -30,6 +30,10 @@
 
 <script>
   window.onload = function() {
+    function hasTouchSupport() {
+      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }
+
     // Bulb
     const bulbOff = document.getElementById('bulb-off') as HTMLObjectElement;
     const bulbOn = document.getElementById('bulb-on') as HTMLObjectElement;
@@ -41,11 +45,11 @@
       document.documentElement.classList.add('dark')
       themeSwitcher.checked = true;
       bulbOn.style.opacity = '1';
-      bulbTogglerText.innerHTML = 'turn on';
+      if(!hasTouchSupport) bulbTogglerText.innerHTML = 'turn on';
     }
     else {
       bulbOff.style.opacity = '1';
-      bulbTogglerText.innerHTML = 'turn off';
+      if(!hasTouchSupport) bulbTogglerText.innerHTML = 'turn off';
     }
 
     function toggleTheme() {
@@ -57,14 +61,14 @@
         bulbOff.style.opacity = '0';
         bulbOn.style.opacity = '1';
         themeSwitcher.checked = true;
-        bulbTogglerText.innerHTML = 'turn on';
+        if(!hasTouchSupport) bulbTogglerText.innerHTML = 'turn on';
       } else {
         document.documentElement.classList.remove('dark')
         localStorage.setItem('theme', 'light')
         bulbOff.style.opacity = '1';
         bulbOn.style.opacity = '0';
         themeSwitcher.checked = false;
-        bulbTogglerText.innerHTML = 'turn off';
+        if(!hasTouchSupport) bulbTogglerText.innerHTML = 'turn off';
       }
     }
 
