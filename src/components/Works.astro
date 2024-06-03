@@ -14,7 +14,7 @@ interface Project {
 const { projects } = Astro.props;
 ---
 
-<div class="grid grid-cols-3 gap-10 my-36">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
   {projects.map(project => (
     <a href={`/projects/${project.slug}`}>
       <div class="relative group bg-white dotted-border dark:border-none dark:bg-[#19122e] p-2 md:p-4 flex flex-col gap-2 z-0">

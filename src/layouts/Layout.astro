@@ -91,6 +91,12 @@ const { title } = Astro.props;
 		mix-blend-mode: difference;
 		z-index: 100;
 		pointer-events: none;
+		display: none;
+	}
+	.gradient-text {
+		@apply bg-clip-text text-transparent bg-gradient-to-br;
+		@apply from-yellow-500 via-yellow-600 to-pink-500;
+		@apply dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500;
 	}
 </style>
 
@@ -115,8 +121,12 @@ const { title } = Astro.props;
 		const xSet = gsap.quickSetter(cursor, "x", "px");
 		const ySet = gsap.quickSetter(cursor, "y", "px");
 
-		window.addEventListener("mousemove", e => {    
-			mouse.x = e.x;
+		window.addEventListener("mousemove", e => {
+			if(cursor && !cursor?.style.display) {
+				cursor.style.display = "block";
+			}
+			
+ 			mouse.x = e.x;
 			mouse.y = e.y; 
 		});
 
