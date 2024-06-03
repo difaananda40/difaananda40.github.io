@@ -1,6 +1,6 @@
 ---
  const path: string = Astro.url.pathname;
- const currentPath: string = `text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br
+ const currentPath: string = `font-semibold bg-clip-text text-transparent bg-gradient-to-br
                               from-red-400 to-red-600
                               dark:from-blue-400 dark:to-blue-600`;
 ---
@@ -35,10 +35,6 @@
 
 <script>
   window.onload = function() {
-    function hasTouchSupport() {
-      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    }
-
     // Bulb
     const bulbOff = document.getElementById('bulb-off') as HTMLObjectElement;
     const bulbOn = document.getElementById('bulb-on') as HTMLObjectElement;
