@@ -19,7 +19,7 @@ const { projects } = Astro.props;
     <a href={`/projects/${project.slug}`}>
       <div class="relative group bg-white dotted-border dark:border-none dark:bg-[#19122e] p-2 md:p-4 flex flex-col gap-2 z-0">
         <div class="w-full aspect-[3/2] overflow-y-hidden img-container">
-          <img class="w-full object-cover brightness-100 group-hover:brightness-100 transition-all" src={`images/${project.data.image}`} alt={project.data.title} />
+          <img class="w-full object-cover brightness-100 group-hover:brightness-100 transition-all" src={`/images/${project.data.image}`} alt={project.data.title} />
         </div>
         <h1 class="font-medium opacity-0 md:group-hover:opacity-100 bg-white dark:bg-[#19122e] absolute left-0 bottom-0 w-full px-4 pt-4 pb-6 transition-opacity duration-200">{project.data.title}</h1>
       </div>
