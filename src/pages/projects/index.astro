@@ -1,6 +1,7 @@
 ---
 import Layout from 'layouts/Layout.astro';
 import Works from 'components/Works.astro';
+import Footer from 'components/Footer.astro';
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
@@ -15,4 +16,5 @@ const projects = await getCollection("projects");
 		</h1>
 	</div>
 	<Works projects={projects} />
+	<Footer />
 </Layout>
