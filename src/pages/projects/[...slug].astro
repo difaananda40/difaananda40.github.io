@@ -15,8 +15,6 @@ const { Content } = await entry.render();
 ---
 <Layout title={entry.data.title}>
   <MarkdownPostLayout frontmatter={entry.data}>
-    <article class="prose lg:prose-xl dark:prose-invert">
-      <Content />
-    </article>
+    <Content />
   </MarkdownPostLayout>
 </Layout>
