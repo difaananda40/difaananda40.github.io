@@ -1,0 +1,65 @@
+---
+import clsx from 'clsx';
+
+interface Props {
+  classes?: string;
+  variant?: ButtonVariant;
+  align?: ButtonAlign;
+  href?: string;
+}
+
+type ButtonAlign = 'left' | 'center' | 'right';
+type ButtonVariant = 'primary' | 'dark';
+
+const buttonVariantClasses: Record<ButtonVariant, string> = {
+  primary: 'button-primary button__border',
+  dark: 'button-dark button__border',
+};
+
+const buttonAlignClasses: Record<ButtonAlign, string> = {
+  left: 'text-left',
+  center: 'text-center',
+  right: 'text-right',
+};
+
+const { classes, variant = 'primary', align = 'center', href, ...attributes } = Astro.props;
+
+const allClass = clsx('button', buttonVariantClasses[variant], buttonAlignClasses[align]);
+---
+
+<div class={clsx(classes, 'button-wrapper')}>
+  {href ? (
+    <a href={href} class={allClass} {...attributes}>
+      <slot />
+    </a>
+  ) : (
+    <button class={allClass} {...attributes}>
+      <slot />
+    </button>
+  )}
+</div>
+
+<style>
+  .button-wrapper {
+    @apply w-full sm:w-fit;
+  }
+  .button {
+    @apply relative flex w-full justify-center rounded-[20px]  px-6 py-3 font-medium uppercase transition-colors;
+  }
+
+  .button__border {
+    @apply border border-b-[3px] border-r-[3px] border-black;
+  }
+
+  .button-primary {
+    @apply bg-yellow-300 text-black hover:bg-black hover:text-white;
+  }
+
+  :global(.dark) .button-primary{
+    @apply bg-[#19122e] text-white hover:bg-yellow-300 hover:text-black;
+  }
+
+  .button-dark {
+    @apply bg-black text-white hover:bg-yellow-300 dark:bg-[#19122e] hover:text-black;
+  }
+</style>

@@ -1,3 +1,7 @@
+---
+import Button from 'components/common/Button.astro';
+---
+
 <div id="catch-me" class="flex flex-col lg:flex-row justify-between items-center overflow-x-hidden">
   <div class="py-16 2xl:py-32 space-y-8 flex flex-col w-full lg:w-1/2">
     <h2 class="text-black text-6xl font-bold dark:text-white">Get in touch.</h2>
@@ -12,7 +16,7 @@
         <a class="text-lg text-gray-700 dark:text-gray-300 underline" target="_blank" href="https://www.upwork.com/freelancers/~0175407f2d9132f772">Upwork Profile</a>
       </div>
     </div>
-    <a href="mailto:difaananda420@gmail.com" class="w-fit px-8 py-4 bg-yellow-300 dark:bg-[#19122e] text-lg font-medium hover:brightness-95 dark:hover:brightness-110 transition-all">Catch me</a>
+    <Button href="mailto:difaananda420@gmail.com" classes="mt-10" href="/projects">Cath me</Button>
   </div>
   <div class="relative w-fit h-fit">
     <dotlottie-player class="w-full h-full" src="lotties/windy-environment.lottie"  background="transparent"  speed="1"  loop  autoplay></dotlottie-player>
