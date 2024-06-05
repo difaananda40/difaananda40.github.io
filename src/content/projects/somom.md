@@ -1,6 +1,6 @@
 ---
 title: Somom's Web Profile
-image: somom-min.jpg
+image: somom/image-1.jpg
 ---
 
 # Somom's Web Profile

@@ -1,6 +1,6 @@
 ---
 title: M.A.U Collective
-image: mau-min.jpg
+image: mau-collective/image-1.jpg
 ---
 
 # M.A.U Collective's Website
