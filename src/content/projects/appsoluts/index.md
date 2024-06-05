@@ -1,6 +1,7 @@
 ---
-title: _app:soluts/*
-image: appsoluts/image-1.jpg
+title: "_app:soluts/*"
+cover: "./image-1.jpg"
+coverAlt: "appsoluts cover"
 ---
 
 ## Building appsoluts.com with AstroJS: A Journey to a Cutting-Edge Website
