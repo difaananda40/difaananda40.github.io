@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from 'layouts/Layout.astro';
 import MarkdownPostLayout from 'layouts/MarkdownPostLayout.astro';
+import { decorateTitle } from 'helpers';
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection('projects');
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<Layout title={entry.data.title}>
+<Layout title={decorateTitle(entry.data.title)}>
   <MarkdownPostLayout frontmatter={entry.data}>
     <Content />
   </MarkdownPostLayout>

@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { decorateTitle } from 'helpers';
 import type { Project } from 'types';
 
 export interface Props {
@@ -18,7 +19,7 @@ const { projects } = Astro.props;
         <div class="w-full overflow-y-hidden img-container">
           <Image class="w-full aspect-[3/2] object-cover brightness-100 group-hover:brightness-100 transition-all" src={project.data.cover} alt={project.data.coverAlt} />
         </div>
-        <h1 class="font-medium opacity-0 md:group-hover:opacity-100 bg-white dark:bg-[#19122e] absolute left-0 bottom-0 w-full px-4 py-4 transition-opacity duration-200">{project.data.title}</h1>
+        <h1 class="font-medium opacity-0 md:group-hover:opacity-100 bg-white dark:bg-[#19122e] absolute left-0 bottom-0 w-full px-4 py-4 transition-opacity duration-200">{decorateTitle(project.data.title)}</h1>
       </div>
     </a>
   ))}
