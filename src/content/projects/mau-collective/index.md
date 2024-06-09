@@ -1,6 +1,6 @@
 ---
 title: "M.A.U Collective"
-cover: "./image-1.jpg"
+cover: "./image-1.png"
 coverAlt: "M.A.U Collective cover"
 ---
 

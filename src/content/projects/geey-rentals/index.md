@@ -1,6 +1,6 @@
 ---
 title: "Geey Rentals"
-cover: "./image-1.jpg"
+cover: "./image-1.png"
 coverAlt: "Geey Rentals cover"
 ---
 

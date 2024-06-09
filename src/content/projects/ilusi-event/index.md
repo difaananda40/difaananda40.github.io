@@ -1,6 +1,6 @@
 ---
 title: "Ilusi Event Ticketing"
-cover: "./image-1.jpg"
+cover: "./image-1.png"
 coverAlt: "Ilusi Event Ticketing cover"
 ---
 

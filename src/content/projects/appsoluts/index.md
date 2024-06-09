@@ -1,6 +1,6 @@
 ---
-title: "_app:soluts/*"
-cover: "./image-1.jpg"
+title: "app:soluts"
+cover: "./image-1.png"
 coverAlt: "appsoluts cover"
 ---
 

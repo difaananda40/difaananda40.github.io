@@ -1,6 +1,6 @@
 ---
 title: "Redcura"
-cover: "./image-1.jpg"
+cover: "./image-1.png"
 coverAlt: "Redcura cover"
 ---
 
