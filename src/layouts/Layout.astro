@@ -99,6 +99,7 @@ const { title } = Astro.props;
 
 <script>
 	import gsap from 'gsap'
+	window.gsap = gsap;
 	
 	function hasTouchSupport() {
 		return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
