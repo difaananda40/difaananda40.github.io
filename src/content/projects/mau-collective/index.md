@@ -1,7 +1,8 @@
 ---
 title: "M.A.U Collective"
-cover: "./image-1.png"
-coverAlt: "M.A.U Collective cover"
+images: [
+    './image-1.png',
+]
 ---
 
 ## Crafting M.A.U Collective: A Digital Showcase for Creative Works

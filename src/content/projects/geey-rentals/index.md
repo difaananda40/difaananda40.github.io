@@ -1,7 +1,8 @@
 ---
 title: "Geey Rentals"
-cover: "./image-1.png"
-coverAlt: "Geey Rentals cover"
+images: [
+    './image-1.png',
+]
 ---
 
 ## Crafting Geey Rentals: A Digital Solution for Seamless Property Management

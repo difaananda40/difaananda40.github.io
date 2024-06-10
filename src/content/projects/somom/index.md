@@ -1,7 +1,8 @@
 ---
 title: "Somom's Web Profile"
-cover: "./image-1.png"
-coverAlt: "Somom's Web Profile cover"
+images: [
+    './image-1.png',
+]
 ---
 
 ## Introducing SOMOM: A Frontend Masterpiece with Next.js and Tailwind CSS

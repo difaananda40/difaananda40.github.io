@@ -1,7 +1,8 @@
 ---
 title: "app:soluts"
-cover: "./image-1.png"
-coverAlt: "appsoluts cover"
+images: [
+    './image-1.png',
+]
 ---
 
 ## Building appsoluts.com with AstroJS: A Journey to a Cutting-Edge Website

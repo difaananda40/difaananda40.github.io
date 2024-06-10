@@ -1,7 +1,8 @@
 ---
 title: "Ilusi Event Ticketing"
-cover: "./image-1.png"
-coverAlt: "Ilusi Event Ticketing cover"
+images: [
+    './image-1.png',
+]
 ---
 
 ## Building ilusievent.com: A Seamless Event Management Platform
