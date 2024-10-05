@@ -1,5 +1,6 @@
 ---
 title: "M.A.U Collective"
+link: "https://mau-collective.vercel.app/"
 images: [
     './image-1.png',
 ]
