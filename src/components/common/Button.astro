@@ -6,6 +6,7 @@ interface Props {
   variant?: ButtonVariant;
   align?: ButtonAlign;
   href?: string;
+  newTab?: boolean;
 }
 
 type ButtonAlign = 'left' | 'center' | 'right';
@@ -22,14 +23,14 @@ const buttonAlignClasses: Record<ButtonAlign, string> = {
   right: 'text-right',
 };
 
-const { classes, variant = 'primary', align = 'center', href, ...attributes } = Astro.props;
+const { classes, variant = 'primary', align = 'center', href, newTab = false, ...attributes } = Astro.props;
 
 const allClass = clsx('button', buttonVariantClasses[variant], buttonAlignClasses[align]);
 ---
 
 <div class={clsx(classes, 'button-wrapper')}>
   {href ? (
-    <a href={href} class={allClass} {...attributes}>
+    <a href={href} class={allClass} target={newTab ? "_blank" : undefined} rel={newTab ? "noreferrer noopener" : undefined} {...attributes}>
       <slot />
     </a>
   ) : (

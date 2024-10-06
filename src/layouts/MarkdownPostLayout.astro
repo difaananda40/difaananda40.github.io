@@ -10,7 +10,7 @@ const title = decorateTitle(frontmatter.title);
   <h1 class="font-bold text-3xl sm:text-5xl text-center sm:text-left leading-snug sm:leading-snug">{title}</h1>
   <Gallery images={frontmatter.images} link={frontmatter.link} />
   {frontmatter.link ? (
-      <Button classes="mt-5 mb-10 mx-auto" href={frontmatter.link}>Open preview in new tab</Button>
+      <Button classes="mt-5 mb-10 mx-auto" href={frontmatter.link} newTab={true}>Open preview in new tab</Button>
   ) : null}
   <article class="prose lg:prose-xl dark:prose-invert mx-auto">
     <slot />
