@@ -9,6 +9,7 @@ images: [
     './image-5.png',
     './image-6.png',
 ]
+image_full: './image-full.png'
 ---
 
 ## Building appsoluts.com with AstroJS: A Journey to a Cutting-Edge Website

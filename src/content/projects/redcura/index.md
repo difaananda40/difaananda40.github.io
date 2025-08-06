@@ -9,6 +9,7 @@ images: [
     './image-5.png',
     './image-6.png',
 ]
+image_full: './image-full.png'
 ---
 
 ## Crafting Redcura: A Digital Solution for Seamless Property Management
@@ -29,19 +30,19 @@ Creating a website that caters to the diverse needs of property rentals requires
     - **Astro** for its robust features and performance benefits.
     - **Tailwind CSS** for efficient and responsive design.
     - **Vercel** for seamless deployment and hosting.
-    
+
     This combination of technologies provided the flexibility and scalability needed to build a dynamic and responsive website.
 
 3. Design and User Experience
-    
+
     A significant focus was placed on designing a clean, intuitive interface. Using Tailwind CSS, I created a responsive layout that adapts seamlessly across different devices. The design prioritized ease of navigation, ensuring that users can quickly find what they are looking for without any hassle.
 
 5. Optimization and Deployment
-    
+
     Performance optimization was a key focus throughout the development process. By using Next.js and deploying on Vercel, I ensured that the site loads quickly and performs reliably under varying conditions. After thorough testing and refinement, the site was deployed, ready to serve property owners and tenants alike.
 
 6. Continuous Improvement
-    
+
     Post-launch, I have been actively gathering user feedback to identify areas for improvement. Regular updates and enhancements are made to ensure that Redcura remains a top-tier platform in the property rental market.
 
 ## The Result

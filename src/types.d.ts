@@ -5,5 +5,6 @@ export interface Project {
   data: {
     title: string;
     images: Array<ImageMetadata>;
+    image_full?: ImageMetadata;
   };
 }

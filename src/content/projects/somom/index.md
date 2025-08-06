@@ -8,6 +8,7 @@ images: [
     './image-4.png',
     './image-5.png',
 ]
+image_full: './image-full.png'
 ---
 
 ## Introducing SOMOM: A Frontend Masterpiece with Next.js and Tailwind CSS
@@ -21,15 +22,15 @@ To achieve this, I chose Next.js as the foundational technology for the frontend
 
 ### The Development Process
 1. Conceptualization and Planning
-    
+
     The initial phase involved detailed planning to outline the key features and functionalities required for SOMOM. Understanding user needs and defining the project scope were critical steps in setting a clear direction for the development process.
 
 2. Setting Up Next.js and Tailwind CSS
-    
+
     The development environment was set up with Next.js, providing a robust framework for building the frontend, and Tailwind CSS, which was integrated to ensure efficient and flexible styling. The combination of these technologies allowed for the creation of a highly responsive and visually appealing website.
 
 3. Design and User Interface
-    
+
     A significant focus was placed on designing a user-friendly and aesthetically pleasing interface. Tailwind CSS was instrumental in creating a consistent design system, enabling the rapid development of responsive layouts. The design aims to provide an intuitive navigation experience while ensuring that the visual elements are engaging and impactful.
 
 4. Implementing Core Features
