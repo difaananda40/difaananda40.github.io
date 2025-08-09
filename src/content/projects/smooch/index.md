@@ -9,7 +9,7 @@ images: [
 ]
 ---
 
-## Introduction
+## SMOOCH Meets High-Performance Headless Commerce
 **SMOOCH** is a stylish online shop featuring chic wardrobe staples like the Polo Baby Tee, Snatch Halter, and Dreamy Shorts. But beneath its clean design lies a cutting-edge tech core powered by Shopify Hydrogen—Shopify’s React-based, headless storefront framework.
 
 ### Why Hydrogen Made the Difference
