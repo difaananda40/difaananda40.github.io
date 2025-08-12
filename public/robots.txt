@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://difaananda.works/sitemap-index.xml
+
+# Crawl delay (optional - adjust as needed)
+Crawl-delay: 1
+
+# Block access to admin/private areas if any
+Disallow: /api/
+Disallow: /.astro/
+Disallow: /node_modules/
+
+# Allow access to important assets
+Allow: /images/
+Allow: /icons/
+Allow: /lotties/
+Allow: /*.css
+Allow: /*.js
+Allow: /favicon.svg

@@ -1,21 +1,48 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from 'layouts/Layout.astro';
-import MarkdownPostLayout from 'layouts/MarkdownPostLayout.astro';
-import { decorateTitle } from 'helpers';
+import { getCollection } from "astro:content";
+import Layout from "layouts/Layout.astro";
+import MarkdownPostLayout from "layouts/MarkdownPostLayout.astro";
+import { generatePageTitle, generateKeywords } from "config/seo";
 
 export async function getStaticPaths() {
-  const projectEntries = await getCollection('projects');
-  return projectEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
-  }));
+    const projectEntries = await getCollection("projects");
+    return projectEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Generate SEO data for the project
+const projectTitle = generatePageTitle(entry.data.title);
+const projectDescription = `Explore ${entry.data.title}, a creative project by Difa Ananda. View live demo and discover the technologies and design process behind this work.`;
+const projectKeywords = generateKeywords([
+    entry.data.title,
+    "Project",
+    "Portfolio",
+    "Creative Work",
+    "Live Demo",
+    "Case Study",
+]);
+
+// Use the first image as the Open Graph image if available
+const projectImage =
+    entry.data.images && entry.data.images.length > 0
+        ? entry.data.images[0].src
+        : "/images/difa.png";
 ---
-<Layout title={decorateTitle(entry.data.title)}>
-  <MarkdownPostLayout frontmatter={entry.data}>
-    <Content />
-  </MarkdownPostLayout>
+
+<Layout
+    title={projectTitle}
+    description={projectDescription}
+    keywords={projectKeywords}
+    image={projectImage}
+    imageAlt={`Preview of ${entry.data.title} project`}
+    type="article"
+>
+    <MarkdownPostLayout frontmatter={entry.data}>
+        <Content />
+    </MarkdownPostLayout>
 </Layout>

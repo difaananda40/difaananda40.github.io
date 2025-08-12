@@ -3,11 +3,25 @@ import Layout from "layouts/Layout.astro";
 import Works from "components/Works.astro";
 import Footer from "components/Footer.astro";
 import { getCollection } from "astro:content";
+import { generatePageTitle, generateKeywords } from "config/seo";
 
 const projects = await getCollection("projects");
 ---
 
-<Layout title="projects">
+<Layout
+    title={generatePageTitle("projects")}
+    description="Browse through my collection of web development projects, applications, and creative works. Discover the technologies and design processes behind each project."
+    keywords={generateKeywords([
+        "Projects",
+        "Portfolio",
+        "Applications",
+        "Creative Works",
+        "Recent Works",
+        "Development",
+        "Professional Work",
+    ])}
+    type="website"
+>
     <div class="flex flex-col justify-center xs:items-center my-20">
         <h1
             class="w-full font-bold text-6xl xs:text-7xl tracking-wide flex flex-row flex-wrap sm:justify-center gap-y-2 gap-x-4"

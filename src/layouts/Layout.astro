@@ -1,141 +1,178 @@
 ---
-import Header from 'components/common/Header.astro';
-import { ViewTransitions } from 'astro:transitions';
+import Header from "components/common/Header.astro";
+import SEO from "components/seo/SEO.astro";
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
-	title?: string;
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    image?: string;
+    imageAlt?: string;
+    type?: "website" | "article" | "profile";
+    noindex?: boolean;
+    nofollow?: boolean;
 }
 
-const { title } = Astro.props;
+const {
+    title,
+    description,
+    keywords,
+    image,
+    imageAlt,
+    type,
+    noindex,
+    nofollow,
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title ? title + ' by difaananda.' : 'by difaaananda.'}</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
 
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+        <!-- SEO Meta Tags -->
+        <SEO
+            title={title}
+            description={description}
+            keywords={keywords}
+            image={image}
+            imageAlt={imageAlt}
+            type={type}
+            noindex={noindex}
+            nofollow={nofollow}
+        />
 
-		<!-- 3rd party js -->
-		<script src="https://unpkg.com/@dotlottie/player-component@1.0.0/dist/dotlottie-player.js"></script>
+        <!-- Favicons -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+        <link rel="mask-icon" href="/favicon.svg" color="#7c3aed" />
 
+        <!-- Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700;900&display=swap"
+            rel="stylesheet"
+        />
 
-		<ViewTransitions />
-	</head>
-	<body class="bg-lime-50 text-black
-							 dark:bg-[#03001C] dark:text-white
-	">
-		<!-- Custom Cursor -->
-		<div id="cursor" transition:persist></div>
+        <!-- 3rd party js -->
+        <script
+            src="https://unpkg.com/@dotlottie/player-component@1.0.0/dist/dotlottie-player.js"
+        ></script>
 
-		<Header />
-		<main class="w-full md:w-3/4 max-w-7xl mx-auto">
-			<div class="p-4 md:p-10">
-				<slot />
-			</div>
-		</main>
-	</body>
+        <ViewTransitions />
+    </head>
+    <body class="bg-lime-50 text-black
+							 dark:bg-[#03001C] dark:text-white">
+        <!-- Custom Cursor -->
+        <div id="cursor" transition:persist></div>
+
+        <Header />
+        <main class="w-full md:w-3/4 max-w-7xl mx-auto">
+            <div class="p-4 md:p-10">
+                <slot />
+            </div>
+        </main>
+    </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: Poppins, sans-serif;
-	}
+    :root {
+        --accent: 124, 58, 237;
+        --accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--accent)),
+            #da62c4 30%,
+            white 60%
+        );
+    }
+    html {
+        font-family: Poppins, sans-serif;
+    }
 
-	* {
-		scroll-behavior: smooth;
-	}
+    * {
+        scroll-behavior: smooth;
+    }
 
-	.dotted-border {
-		border-style: dotted;
-		border-width: 3px;
-		border-image-source: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAAEgAAAACaqbJVAAAAVklEQVQ4EWPUkmD5zwAEV5//BlEYQFuSFSxGSJ4JQyeZAoz/gYBMvSjaqOaiUYNQwhUrh5FQOsKqC0kQls6oFtij6QgpdHEwqRbYVDOIYDqCpRO6lUcAoF8a5+ZdSigAAAAASUVORK5CYII=);
-		border-image-slice: 33%;
-		border-image-repeat: round;
-	}
-	
-	#cursor {
-		width: 65px;
-		height: 65px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-color: #fff;
-		border-radius: 50%;
-		mix-blend-mode: difference;
-		z-index: 100;
-		pointer-events: none;
-		display: none;
-	}
-	.gradient-text {
-		@apply bg-clip-text text-transparent bg-gradient-to-br;
-		@apply from-yellow-500 via-yellow-600 to-pink-500;
-		@apply dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500;
-	}
+    .dotted-border {
+        border-style: dotted;
+        border-width: 3px;
+        border-image-source: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAAEgAAAACaqbJVAAAAVklEQVQ4EWPUkmD5zwAEV5//BlEYQFuSFSxGSJ4JQyeZAoz/gYBMvSjaqOaiUYNQwhUrh5FQOsKqC0kQls6oFtij6QgpdHEwqRbYVDOIYDqCpRO6lUcAoF8a5+ZdSigAAAAASUVORK5CYII=);
+        border-image-slice: 33%;
+        border-image-repeat: round;
+    }
+
+    #cursor {
+        width: 65px;
+        height: 65px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        border-radius: 50%;
+        mix-blend-mode: difference;
+        z-index: 100;
+        pointer-events: none;
+        display: none;
+    }
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-br;
+        @apply from-yellow-500 via-yellow-600 to-pink-500;
+        @apply dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500;
+    }
 </style>
 
 <!-- Theme -->
 <script is:inline>
-	function initTheme() {
-		const theme = localStorage.getItem('theme') || 'light'
-		if (theme === 'dark') {
-			document.documentElement.classList.add('dark')
-		}
-	}
+    function initTheme() {
+        const theme = localStorage.getItem("theme") || "light";
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    }
 
-	initTheme();
-	document.addEventListener('astro:after-swap', initTheme);
+    initTheme();
+    document.addEventListener("astro:after-swap", initTheme);
 </script>
 
 <script>
-	import gsap from 'gsap'
-	window.gsap = gsap;
-	
-	function hasTouchSupport() {
-		return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-	}
+    import gsap from "gsap";
+    window.gsap = gsap;
 
-	if(hasTouchSupport()) {
-		document.getElementById("cursor")?.remove();
-	}
-	else {
-		const cursor = document.getElementById("cursor");
-		gsap.set(cursor, {xPercent: -50, yPercent: -50});
+    function hasTouchSupport() {
+        return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
 
-		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-		const mouse = { x: pos.x, y: pos.y };
-		const speed = 0.35;
+    if (hasTouchSupport()) {
+        document.getElementById("cursor")?.remove();
+    } else {
+        const cursor = document.getElementById("cursor");
+        gsap.set(cursor, { xPercent: -50, yPercent: -50 });
 
-		const xSet = gsap.quickSetter(cursor, "x", "px");
-		const ySet = gsap.quickSetter(cursor, "y", "px");
+        const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        const mouse = { x: pos.x, y: pos.y };
+        const speed = 0.35;
 
-		window.addEventListener("mousemove", e => {
-			if(cursor && !cursor?.style.display) {
-				cursor.style.display = "block";
-			}
-			
- 			mouse.x = e.x;
-			mouse.y = e.y; 
-		});
+        const xSet = gsap.quickSetter(cursor, "x", "px");
+        const ySet = gsap.quickSetter(cursor, "y", "px");
 
-		gsap.ticker.add(() => {
-			// adjust speed for higher refresh monitors
-			const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio()); 
-			
-			pos.x += (mouse.x - pos.x) * dt;
-			pos.y += (mouse.y - pos.y) * dt;
-			xSet(pos.x);
-			ySet(pos.y);
-		});
-	}
+        window.addEventListener("mousemove", (e) => {
+            if (cursor && !cursor?.style.display) {
+                cursor.style.display = "block";
+            }
+
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        gsap.ticker.add(() => {
+            // adjust speed for higher refresh monitors
+            const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+
+            pos.x += (mouse.x - pos.x) * dt;
+            pos.y += (mouse.y - pos.y) * dt;
+            xSet(pos.x);
+            ySet(pos.y);
+        });
+    }
 </script>
