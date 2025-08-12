@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
   site: "https://difaananda.works",
   title: "by difaananda.",
   description:
-    "Full Stack Developer and Designer passionate about creating beautiful, functional web experiences. Specializing in modern web technologies and user-centered design.",
+    "Crafts sleek, high-quality websites with a futuristic edge. Specialized in minimalist designs that combine advanced technology with seamless usability. From smooth animations to optimized performance, I turn complex ideas into simple, engaging user experiences.",
   author: "Difa Ananda",
   keywords: [
     "Difa Ananda",
