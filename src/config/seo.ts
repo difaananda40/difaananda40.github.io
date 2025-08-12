@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
   site: "https://difaananda.works",
   title: "by difaananda.",
   description:
-    "Crafts sleek, high-quality websites with a futuristic edge. Specialized in minimalist designs that combine advanced technology with seamless usability. From smooth animations to optimized performance, I turn complex ideas into simple, engaging user experiences.",
+    "Crafts sleek, high-quality websites with a futuristic edge. Specialized in minimalist designs that combine advanced technology with seamless usability. From smooth animations to optimized performance, turn complex ideas into simple, engaging user experiences.",
   author: "Difa Ananda",
   keywords: [
     "Difa Ananda",
