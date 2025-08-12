@@ -19,11 +19,13 @@ const { projects } = Astro.props;
                     class="group bg-white dotted-border dark:border-none dark:bg-[#19122e] p-2 md:p-4 flex flex-col gap-2 odd:-rotate-3 even:rotate-3 even:-translate-y-8 even:md:-translate-y-16 z-0 hover:z-10 -mx-4 md:-mx-10"
                 >
                     <div class="w-full aspect-[2/3] overflow-y-hidden img-container">
-                        <Image
-                            class="w-full object-cover brightness-100 group-hover:brightness-100 transition-all"
-                            src={project.data.image_full}
-                            alt={project.data.title}
-                        />
+                        {project.data.image_full && (
+                            <Image
+                                class="w-full object-cover brightness-100 group-hover:brightness-100 transition-all"
+                                src={project.data.image_full}
+                                alt={project.data.title}
+                            />
+                        )}
                     </div>
                     <h1 class="font-medium opacity-0 md:group-hover:opacity-100 bg-white dark:bg-[#19122e] absolute bottom-0 w-full -mx-4 px-4 pt-4 pb-6 transition-opacity duration-200">
                         {project.data.title}
